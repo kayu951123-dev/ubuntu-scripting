@@ -1,0 +1,89 @@
+# Install Docker & Docker Compose
+
+## Usage
+
+Make sure the script is executable:
+```bash
+chmod +x install_docker.sh
+```
+
+Run the installation script:
+```bash
+./install_docker.sh
+```
+
+# Install Self-Hosted Supabase
+
+## Usage
+
+Make sure the script is executable:
+```bash
+chmod +x install_supabase.sh
+```
+
+Run the installation script:
+```bash
+sudo ./install_supabase.sh
+```
+## Start Supabase
+
+Start the services (in detached mode):
+```bash
+docker compose up -d
+```
+
+After all the services have started you can see them running in the background:
+```bash
+docker compose ps
+
+```
+After a minute or less, all services should have a status Up [...] (healthy). If you see a status such as created but not Up, try inspecting the Docker logs for a specific container, e.g.,
+```bash
+docker compose logs analytics
+```
+
+To stop Supabase, use:
+```bash
+docker compose down
+```
+
+## Supabase Supervisor
+
+| Field    | Value                    |
+|----------|--------------------------|
+| Host     | `localhost`              |
+| Port     | `5432`                   |
+| Database | `postgres`               |
+| Username | `postgres.<tenant-id>`   |
+| Password | your `POSTGRES_PASSWORD` |
+
+
+# Run sync db script
+
+Make sure the script is executable:
+```bash
+chmod +x *.sh
+```
+Run the installation script:
+```bash
+./sync_db.sh
+```
+
+
+# Setup Cronjob
+
+## Usage
+
+Run the installation script:
+```bash
+./setup_cron.sh
+```
+
+Check Cronjob list:
+```bash
+crontab -l
+```
+
+# Prerequisites
+- Sufficient permissions (you may need `sudo`)
+

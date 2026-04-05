@@ -35,8 +35,8 @@ docker compose up -d
 After all the services have started you can see them running in the background:
 ```bash
 docker compose ps
-
 ```
+
 After a minute or less, all services should have a status Up [...] (healthy). If you see a status such as created but not Up, try inspecting the Docker logs for a specific container, e.g.,
 ```bash
 docker compose logs analytics
@@ -118,9 +118,14 @@ Run the installation script:
 
 ## Usage
 
-Run the installation script:
+Setup cron script:
 ```bash
-./setup_cron.sh
+./setup_cron.sh start
+```
+
+Stop cron script:
+```bash
+./setup_cron.sh stop
 ```
 
 Check Cronjob list:

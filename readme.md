@@ -57,6 +57,50 @@ docker compose down
 | Username | `postgres.<tenant-id>`   |
 | Password | your `POSTGRES_PASSWORD` |
 
+# Database Configuration Setup
+
+## Prerequisites
+- Supabase account with an active project
+- Local PostgreSQL instance running
+
+---
+
+## Configuration
+
+
+```
+CLOUD_DB_URL="postgresql://postgres:[YOUR-PASSWORD]@db.[YOUR-PROJECT-REF].supabase.co:5432/postgres"
+LOCAL_DB_URL="postgresql://postgres.[YOUR-TENANT-ID]:[YOUR-LOCAL-PASSWORD]@localhost:5432/postgres"
+```
+
+---
+
+## Replace the Placeholders
+
+### Cloud Database (`CLOUD_DB_URL`)
+| Placeholder | Description | Example |
+|---|---|---|
+| `[YOUR-PASSWORD]` | Supabase database password | `mypassword123` |
+| `[YOUR-PROJECT-REF]` | Supabase project reference ID | `abcdefghijklmn` |
+
+> **Where to find it:** Supabase Dashboard → Project Settings → Database → Connection String
+
+### Local Database (`LOCAL_DB_URL`)
+| Placeholder | Description | Example |
+|---|---|---|
+| `[YOUR-TENANT-ID]` | Your local tenant/project ID | `myproject` |
+| `[YOUR-LOCAL-PASSWORD]` | Your local PostgreSQL password | `localpassword` |
+
+> **Where to find it:** Your local PostgreSQL setup credentials
+
+---
+
+## Example
+```env
+CLOUD_DB_URL="postgresql://postgres:mypassword123@db.abcdefghijklmn.supabase.co:5432/postgres"
+LOCAL_DB_URL="postgresql://postgres.myproject:localpassword@localhost:5432/postgres"
+```
+
 
 # Run sync db script
 

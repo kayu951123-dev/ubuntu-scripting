@@ -110,7 +110,7 @@ chmod +x *.sh
 ```
 Run the installation script:
 ```bash
-./sync_db.sh
+sudo ./sync_db.sh
 ```
 
 
@@ -120,12 +120,12 @@ Run the installation script:
 
 Setup cron script:
 ```bash
-./setup_cron.sh start
+sudo ./cron_manager.sh start
 ```
 
 Stop cron script:
 ```bash
-./setup_cron.sh stop
+sudo ./cron_manager.sh stop
 ```
 
 Check Cronjob list:

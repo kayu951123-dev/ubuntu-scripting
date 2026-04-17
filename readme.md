@@ -120,7 +120,7 @@ sudo ./sync_db.sh
 
 Setup cron script:
 ```bash
-sudo ./cron_manager.sh start
+sudo ./cron_manager.sh setup
 ```
 
 Stop cron script:
